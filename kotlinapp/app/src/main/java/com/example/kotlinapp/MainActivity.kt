@@ -7,10 +7,12 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -25,8 +27,7 @@ class MainActivity : ComponentActivity() {
                     LoginScreen(
                         modifier = Modifier.padding(innerPadding),
                         onLoginSuccess = {
-                            // Navegar a SecondActivity cuando el login es exitoso
-                            val intent = Intent(this, SecondActivity::class.java)
+                            val intent = Intent(this, SecondScreen::class.java)
                             startActivity(intent)
                         }
                     )
@@ -82,14 +83,15 @@ fun LoginScreen(modifier: Modifier = Modifier, onLoginSuccess: () -> Unit) {
                 onClick = {
                     loginSuccess = (username == hardcodedUsername && password == hardcodedPassword)
                 },
-                modifier = Modifier.fillMaxWidth()
+                modifier = Modifier.fillMaxWidth(),
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = Color.Red, // Cambia el color de fondo del botón
+                    contentColor = Color.White
+                )
             ) {
                 Text(text = "Login")
             }
 
-            if (!loginSuccess && username.isNotEmpty() && password.isNotEmpty()) {
-                Text(text = "Incorrect username or password", color = androidx.compose.ui.graphics.Color.Red)
-            }
         }
     }
 }
