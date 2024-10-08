@@ -23,7 +23,7 @@ class RockPaperScissorsActivity : ComponentActivity() {
         setContent {
             KotlinappTheme {
                 RockPaperScissorsGame {
-                    // Intent para regresar a la MainActivity cuando se presiona el botón
+                    // Intent para regresar al menu cuando se presiona el botón
                     val intent = Intent(this, SecondScreen::class.java)
                     startActivity(intent)
                 }
@@ -66,21 +66,21 @@ fun RockPaperScissorsGame(onBackToMenu: () -> Unit) {
             ) {
                 Button(
                     onClick = { userChoice = "Rock" },
-                    colors = buttonColors // Aplica los mismos colores
+                    colors = buttonColors
                 ) {
                     Text("Rock")
                 }
                 Spacer(modifier = Modifier.width(8.dp))
                 Button(
                     onClick = { userChoice = "Paper" },
-                    colors = buttonColors // Aplica los mismos colores
+                    colors = buttonColors
                 ) {
                     Text("Paper")
                 }
                 Spacer(modifier = Modifier.width(8.dp))
                 Button(
                     onClick = { userChoice = "Scissors" },
-                    colors = buttonColors // Aplica los mismos colores
+                    colors = buttonColors
                 ) {
                     Text("Scissors")
                 }
@@ -129,7 +129,7 @@ fun RockPaperScissorsGame(onBackToMenu: () -> Unit) {
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(top = 16.dp),
-            colors = buttonColors // Aplica los mismos colores
+            colors = buttonColors
         ) {
             Text("Back to Menu")
         }

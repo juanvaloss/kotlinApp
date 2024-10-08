@@ -31,7 +31,7 @@ class SecondScreen : ComponentActivity() {
                         },
                         modifier = Modifier.fillMaxWidth().padding(8.dp),
                         colors = ButtonDefaults.buttonColors(
-                            containerColor = Color.Red, // Cambia el color de fondo del botón
+                            containerColor = Color.Red,
                             contentColor = Color.White
                         )
                     ) {
@@ -44,7 +44,7 @@ class SecondScreen : ComponentActivity() {
                         },
                         modifier = Modifier.fillMaxWidth().padding(8.dp),
                         colors = ButtonDefaults.buttonColors(
-                            containerColor = Color.Red, // Cambia el color de fondo del botón
+                            containerColor = Color.Red,
                             contentColor = Color.White
                         )
                     ) {
